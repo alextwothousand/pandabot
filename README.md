@@ -14,6 +14,9 @@ The token is easily changeable by modifying `botprefix` and the `$hello` command
 This probably wasn't programmed the best way possible and you could probably incorporate it with some sort of database, for example, asyncpg (PostrgeSQL with async - which is reccomended as SQLite and MySQL are blocking), to add a sort of credits system or something similar to that.
 
 If there are any further issues or you wish to contact me create a `issue` and I will respond asap. Enjoy and have fun!
+
+DOUBLE TRIPLE EXTRA OOF NOTE: Latest copies will be commited but no longer placed in releases, so you'll essentially have to grab them from here!
+
 # LICENSE
     Copyright (c) 2018 Infin1tyy (github)
 
