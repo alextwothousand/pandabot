@@ -44,43 +44,26 @@ async def panda():
 
 @bot.command()
 async def dynamic():
-	rand = random.randint(1, 4)
-	if rand == 1:
-		string = "dynamic TOY system !"
-
-	elif rand == 2:
-		string = "backpack system DYNAMIC"
-
-	elif rand == 3:
-		string = "dynamic HALAL machine"
-
-	elif rand == 4:
-		string = "dynamic MINEcraft KEY ! Generator"
+	string = random.choice(
+            ["dynamic TOY system !",
+             "backpack system DYNAMIC",
+             "dynamic HALAL machine",
+             "dynamic MINEcraft KEY ! Generator!"])
 
 	await bot.say(string)
 
 @bot.command()
-async def eightball():
-	rand = random.randint(1, 6)
-	if rand == 1:
-		string = "certain"
+async def eightball(*, arg):
+    string = random.choice(
+        ["certain",
+         "likely",
+         "somewhat possible",
+         "unlikely",
+         "highly unlikely",
+         "uncertain",
+         "impossible"])
 
-	elif rand == 2:
-		string = "likely"
-
-	elif rand == 3:
-		string = "somewhat possible"
-
-	elif rand == 4:
-		string = "unlikely"
-
-	elif rand == 5:
-		string = "highly unlikely"
-
-	elif rand == 6:
-		string = "uncertain"
-
-	await bot.say(f"The 8ball says that your outcome is '{string}'.")
+    await bot.say(f"The 8ball says that your outcome of {arg} is '{string}'.")
 
 @bot.command()
 async def oofdab():
