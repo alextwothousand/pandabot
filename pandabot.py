@@ -20,15 +20,25 @@ async def on_message(message):
     
     await bot.process_commands(message)
 
-    if message.content == "$hello":
+@bot.command(pass_context=True)
+async def hello(ctx):
+    if ctx.message.author.id == "A_NOOBS_TOKEN_ID":
+            await bot.say("No.")
+            return
 
-	    if message.author.id == "YOUR_CLIENT_ID_HERE": # NAME#TAG Client ID
-	        msg = "my creator, my father, my overlord!"
-	        
-	    else:
-	        msg = message.author.name
+    if ctx.message.author.id == "YOUR_TOKEN_ID":
+        msg = " my father"
 
-	    await bot.send_message(message.channel, f"Hello there {msg}!")
+    elif ctx.message.author.id == "YOUR_FRIENDS_TOKEN_ID":
+        msg = " stupid faggot scripting minion"
+
+    elif ctx.message.author.id == "YOUR_OTHER_FRIENDS_TOKEN_ID":
+        msg = " milkiest man on the planet"
+
+    else:
+        msg = ""
+    
+    await bot.say(f"Hello there{msg}, {ctx.message.author.mention}!")
 
 @bot.command()
 async def prefix():
@@ -65,9 +75,9 @@ async def eightball(*, arg):
 
     await bot.say(f"The 8ball says that your outcome of {arg} is '{string}'.")
 
-@bot.command()
-async def oofdab():
-	await bot.say(":Oof_dab:")
+@bot.command(pass_context=True)
+async def guildname(ctx):
+    await bot.say(f"This is the '{ctx.message.server.name}' guild.")
 
 @bot.event 
 async def on_ready():
