@@ -14,9 +14,6 @@ async def on_message(message):
 
     if message.author == bot.user:
         return
-
-    if "`" in message.content:
-    	return
     
     await bot.process_commands(message)
 
